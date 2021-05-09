@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
-	"goTesting/controllers"
+	"goTestingV2/controllers"
 	"html/template"
 	"log"
 	"net/http"
@@ -39,6 +39,44 @@ func main() {
 	r.HandleFunc("/api/user/{nuserkey}/", controllers.UpdateUser).Methods("PUT")
 	r.HandleFunc("/api/auth/login/", controllers.Login).Methods("POST")
 	r.HandleFunc("/api/auth/logout/", controllers.Logout).Methods("GET")
+	r.HandleFunc("/api/search-users/", controllers.SearchUsers).Methods("POST")
+
+	// tests
+	r.HandleFunc("/api/tests/", controllers.GetTests).Methods("GET")
+	r.HandleFunc("/api/tests/", controllers.AddTest).Methods("POST")
+	r.HandleFunc("/api/test/{nkey}/", controllers.GetTest).Methods("GET")
+	r.HandleFunc("/api/test/{nkey}/", controllers.DeleteTest).Methods("DELETE")
+	r.HandleFunc("/api/test/{nkey}/", controllers.UpdateTest).Methods("PUT")
+	r.HandleFunc("/api/export/{nkey}/", controllers.ExportTest).Methods("GET")
+	r.HandleFunc("/api/import/", controllers.ImportTest).Methods("POST")
+	r.HandleFunc("/api/search-tests/", controllers.SearchTests).Methods("POST")
+
+	// answers
+	r.HandleFunc("/api/answers/", controllers.GetAnswers).Methods("GET")
+	r.HandleFunc("/api/answers/{nkey}/", controllers.GetAnswers).Methods("GET")
+	r.HandleFunc("/api/answers/", controllers.AddAnswer).Methods("POST")
+	r.HandleFunc("/api/search-answers/", controllers.SearchAnswers).Methods("POST")
+
+	// results
+	r.HandleFunc("/api/results/", controllers.GetResults).Methods("GET")
+	r.HandleFunc("/api/search-results/", controllers.SearchResults).Methods("POST")
+
+	// questions
+	r.HandleFunc("/api/questions/{nkey}/", controllers.GetQuestions).Methods("GET")
+	r.HandleFunc("/api/questions/", controllers.GetQuestions).Methods("GET")
+	r.HandleFunc("/api/questions/", controllers.AddQuestion).Methods("POST")
+	r.HandleFunc("/api/question/{nkey}/", controllers.GetQuestion).Methods("GET")
+	r.HandleFunc("/api/question/{nkey}/", controllers.DeleteQuestion).Methods("DELETE")
+	r.HandleFunc("/api/question/{nkey}/", controllers.UpdateQuestion).Methods("PUT")
+
+	// staffTests
+	r.HandleFunc("/api/appointed-tests/", controllers.GetStaffTests).Methods("GET")
+	r.HandleFunc("/api/appointed-tests/", controllers.AddStaffTest).Methods("POST")
+	r.HandleFunc("/api/appointed-test/{nkey}/", controllers.GetStaffTest).Methods("GET")
+	r.HandleFunc("/api/appointed-test/{nkey}/", controllers.DeleteStaffTest).Methods("DELETE")
+
+	// listening
+	r.HandleFunc("/api/listening/", controllers.ListenNotify).Methods("GET")
 
 	e := godotenv.Load() //Загрузить файл .env
 	if e != nil {

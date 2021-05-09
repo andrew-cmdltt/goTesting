@@ -1,0 +1,43 @@
+export default [
+    {
+        "id": 1,
+        "number": 1,
+        "second_name": "Ленский",
+        "name": "Артур",
+        "middle_name": "Евгеньевич",
+        "login": "artur_232_cool",
+        "organization": "Eleron",
+        "acc_type": "admin",
+    },
+    {
+        "id": 2,
+        "number": 2,
+        "second_name": "Дьячков",
+        "name": "Андрей",
+        "middle_name": "Александрович",
+        "login": "andrey_123_dyachkov",
+        "organization": "Eleron",
+        "acc_type": "simple_user",
+    },
+    {
+        "id": 3,
+        "number": 3,
+        "second_name": "Албанцев",
+        "name": "Алексей",
+        "middle_name": "Неизвестнович",
+        "login": "albancev_232_cool",
+        "organization": "Eleron",
+        "acc_type": "simple_user",
+    },
+    {
+        "id": 4,
+        "number": 4,
+        "second_name": "Справосидящев",
+        "name": "Артур",
+        "middle_name": "Ребутович",
+        "login": "spravosidyachev_232_cool",
+        "organization": "Eleron",
+        "acc_type": "simple_user",
+    },
+
+]
