@@ -27,7 +27,7 @@ class PersonalCard extends Component {
                         </ul>
                         <div className="card-body">
                             <button onClick={this.props.logout} className="btn btn-primary">
-                                Logout
+                                Выйти
                             </button>
                         </div>
                     </footer>

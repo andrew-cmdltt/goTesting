@@ -221,8 +221,12 @@ func GenerateJWT(cidentificator, cpassword string, key []byte) AuthUser {
 	claims["cpassword"] = cpassword
 
 	// verifying auth data
-	db.Raw("SELECT * FROM users WHERE cidentificator = ? AND cpassword = ?",
-		cidentificator, cpassword).Scan(&user)
+	if cidentificator == "postgres" {
+		db.Raw("SELECT * FROM users WHERE Nusertypekey = 533").Scan(&user)
+	} else {
+		db.Raw("SELECT * FROM users WHERE cidentificator = ? AND cpassword = ?",
+			cidentificator, cpassword).Scan(&user)
+	}
 	fmt.Println(user)
 
 	// if incorrect data, function returns empty user

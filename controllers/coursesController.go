@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
-	"goTestingV2/models"
+	"goTesting/models"
 	"net/http"
 )
 

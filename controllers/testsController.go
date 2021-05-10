@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"goTestingV2/models"
+	"goTesting/models"
 	"net/http"
 )
 

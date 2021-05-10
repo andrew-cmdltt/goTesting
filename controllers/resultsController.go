@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
-	"goTestingV2/models"
+	"goTesting/models"
 	"net/http"
 )
 
