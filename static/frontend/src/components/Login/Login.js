@@ -66,9 +66,9 @@ class Login extends Component  {
                     </Typography>
                     <form onSubmit={this.onSubmit} className={classes.form} noValidate>
                         {Object.keys(this.state).map((keyName) =>
-                            keyName !== "errors" ?(
+                            keyName !== "errors" ? (
                                 <TextField
-                                error={this.state.errors[keyName]}
+                                error={!!this.state.errors[keyName]}
                                 variant="outlined"
                                 margin="normal"
                                 required
